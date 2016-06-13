@@ -150,6 +150,11 @@ public class RKParallaxEffect: NSObject {
                             tableView.layoutIfNeeded()
                             exitFullScreen()
                         }
+                        else {
+                            if nil != initialContentSize {
+                                tableView.contentSize = isFullScreen ? CGSizeMake(initialContentSize.width, 0) : initialContentSize
+                            }
+                        }
                     }
                 }
             }
